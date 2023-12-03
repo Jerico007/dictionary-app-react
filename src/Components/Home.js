@@ -28,7 +28,7 @@ const Home = () => {
       </Typography>
       }
       {data   &&  data.map((data)=>(
-          <Box sx={{ width: "100%", overflowY:"auto",height:"50vh", padding: 3, marginTop:2, boxShadow: "0px 0px 5px 1px black" }}>
+          <Box sx={{ width: "70%", borderRadius: "7px", padding: 3, marginTop:2, marginLeft:4, boxShadow: "0px 0px 5px 1px black" }}>
           <Typography variant="h2" gutterBottom>
             {data.word}
           </Typography>
