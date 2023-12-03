@@ -31,12 +31,12 @@ export const set_error = (data)=>{
 export const fetchData = (word)=>{
     
     return async function (dispatch){
-            dispatch(set_data(""));
-            dispatch(fetching_data());
+        dispatch(fetching_data());
+            // dispatch(set_data(""));
         try{
             const response = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
-  
-            dispatch(set_data(response.data[0]));
+            // console.log(response.data);
+            dispatch(set_data(response.data));
         }
         catch(e){
             dispatch(set_error(e.message));

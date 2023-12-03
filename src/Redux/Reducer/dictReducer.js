@@ -13,20 +13,21 @@ const dicReducer = (state = initial, action) => {
     const {historyData } = state;
     let history = [...historyData];
       
-     if(!history.includes(action.payLoad.word))
+    
+     if(!history.includes(action.payLoad[0].word))
      {
-      history.push(action.payLoad.word);
+      history.push(action.payLoad[0].word);
      }
       return {
         ...state,data:action.payLoad,fetching:false,error:null ,historyData:[...history]
       }
   }
   if (action.type === SETERROR) {
-    return { ...state, data:{}, error: action.payLoad, fetching: false };
+    return { ...state, data:"", error: action.payLoad, fetching: false };
   }
   if(action.type === FETCHINGDATA)
   {
-    return{...state,data:{},fetching:true,error : null}
+    return{...state,data:"",fetching:true,error : null}
   }
   return state;
 };

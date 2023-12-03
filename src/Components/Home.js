@@ -9,7 +9,7 @@ const Home = () => {
   //store data
   const { data, fetching, error} = useSelector((state) => state);
 
-  
+  console.log(data);
 
   return (
     <div>
@@ -27,8 +27,8 @@ const Home = () => {
         {error}
       </Typography>
       }
-      {data   && (
-        <Box sx={{ width: "100%", overflowY:"auto",height:"60vh", padding: 3,  boxShadow: "0px 0px 5px 1px black" }}>
+      {data   &&  data.map((data)=>(
+          <Box sx={{ width: "100%", overflowY:"auto",height:"50vh", padding: 3, marginTop:2, boxShadow: "0px 0px 5px 1px black" }}>
           <Typography variant="h2" gutterBottom>
             {data.word}
           </Typography>
@@ -64,7 +64,9 @@ const Home = () => {
             }           
           </div>
         </Box>
-      )}
+      ))
+        
+      }
     </div>
   );
 };

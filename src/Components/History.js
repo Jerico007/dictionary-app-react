@@ -8,7 +8,8 @@ import { useNavigate } from "react-router-dom";
 const History = () => {
   //store data
   const { historyData } = useSelector((state) => state);
- 
+  
+  // console.log(historyData)
   const Navigate = useNavigate();
   
   const dispatch = useDispatch();
