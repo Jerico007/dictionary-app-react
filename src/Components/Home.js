@@ -28,7 +28,7 @@ const Home = () => {
       </Typography>
       }
       {data   &&  data.map((data)=>(
-          <Box sx={{ width: "70%", borderRadius: "7px", padding: 3, marginTop:2, marginLeft:4, boxShadow: "0px 0px 5px 1px black" }}>
+          <Box sx={{ width: "70%" ,maxWidth:500, borderRadius: "7px", padding: 3, marginTop:2, marginLeft:4, boxShadow: "0px 0px 5px 1px black" }}>
           <Typography variant="h2" gutterBottom>
             {data.word}
           </Typography>
@@ -37,7 +37,7 @@ const Home = () => {
             {data.phonetics &&  data.phonetics.map((val) => (
               <div>
                 <p>{val.text !== "" ? val.text : ""}</p>
-                {val.audio !== "" ? <audio controls src={val.audio} /> : ""}
+                {val.audio !== "" ? <audio  style={{width:" -webkit-fill-available"}} controls src={val.audio} /> : ""}
               </div>
             ))}
             {/* Word partofSpeech as noun/verb and meaning */}
